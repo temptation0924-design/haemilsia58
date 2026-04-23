@@ -7,7 +7,7 @@ const navItems = [
   { label: "Space", href: "#space" },
   { label: "Features", href: "#features" },
   { label: "Pricing", href: "#pricing" },
-  { label: "Contact", href: "#cta" },
+  { label: "Location", href: "#location" },
 ];
 
 export default function Header() {

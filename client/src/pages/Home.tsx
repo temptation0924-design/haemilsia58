@@ -12,6 +12,7 @@ import SpacePreview from "@/components/SpacePreview";
 import FeatureSection from "@/components/FeatureSection";
 import PricingSection from "@/components/PricingSection";
 import GalleryStrip from "@/components/GalleryStrip";
+import LocationSection from "@/components/LocationSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
@@ -25,6 +26,7 @@ export default function Home() {
       <FeatureSection />
       <PricingSection />
       <GalleryStrip />
+      <LocationSection />
       <CTASection />
       <Footer />
     </div>
