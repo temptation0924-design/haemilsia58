@@ -10,6 +10,7 @@ import HeroSection from "@/components/HeroSection";
 import IntroSection from "@/components/IntroSection";
 import SpacePreview from "@/components/SpacePreview";
 import FeatureSection from "@/components/FeatureSection";
+import PricingSection from "@/components/PricingSection";
 import GalleryStrip from "@/components/GalleryStrip";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -22,6 +23,7 @@ export default function Home() {
       <IntroSection />
       <SpacePreview />
       <FeatureSection />
+      <PricingSection />
       <GalleryStrip />
       <CTASection />
       <Footer />
