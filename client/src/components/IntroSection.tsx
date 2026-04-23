@@ -8,7 +8,7 @@ export default function IntroSection() {
     <section
       id="intro"
       ref={ref}
-      className="py-28 sm:py-36 lg:py-48 px-6 sm:px-10"
+      className="py-20 sm:py-28 lg:py-48 px-5 sm:px-10"
       style={{ backgroundColor: "#FAF8F4" }}
     >
       <div className="max-w-[1200px] mx-auto">
@@ -17,7 +17,7 @@ export default function IntroSection() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 1, delay: 0.2 }}
-          className="text-[12px] tracking-[0.35em] uppercase mb-10 text-[#9A8E82] text-center"
+          className="text-[11px] sm:text-[12px] tracking-[0.35em] uppercase mb-8 sm:mb-10 text-[#9A8E82] text-center"
           style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
         >
           About the Studio
@@ -28,7 +28,7 @@ export default function IntroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
-          className="font-serif text-[#4A3F35] text-3xl sm:text-4xl lg:text-5xl tracking-[0.06em] mb-14 text-center"
+          className="font-serif text-[#4A3F35] text-[1.65rem] sm:text-3xl md:text-4xl lg:text-5xl tracking-[0.04em] sm:tracking-[0.06em] mb-10 sm:mb-14 text-center"
           style={{ fontWeight: 300 }}
         >
           A Space for Your Masterpiece
@@ -39,11 +39,11 @@ export default function IntroSection() {
           initial={{ opacity: 0, scaleX: 0 }}
           animate={isInView ? { opacity: 1, scaleX: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="w-10 h-[1px] bg-[#C8B89A] mx-auto mb-16"
+          className="w-8 sm:w-10 h-[1px] bg-[#C8B89A] mx-auto mb-12 sm:mb-16"
         />
 
         {/* Asymmetric layout: image + text */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-16 items-center">
           {/* Left: Image */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -66,17 +66,17 @@ export default function IntroSection() {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1.2, delay: 1, ease: "easeOut" }}
-            className="lg:col-span-7 space-y-8"
+            className="lg:col-span-7 space-y-6 sm:space-y-8"
           >
             <p
-              className="text-[#5C5147] text-[15px] sm:text-[16px] leading-[2.1] tracking-[0.02em]"
+              className="text-[#5C5147] text-[14px] sm:text-[15px] md:text-[16px] leading-[1.9] sm:leading-[2.1] tracking-[0.02em]"
               style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
             >
               해밀시아 오팔 스튜디오는 경기도 화성에 자리한
               프라이빗 고급 대저택형 촬영 공간입니다.
             </p>
             <p
-              className="text-[#5C5147] text-[15px] sm:text-[16px] leading-[2.1] tracking-[0.02em]"
+              className="text-[#5C5147] text-[14px] sm:text-[15px] md:text-[16px] leading-[1.9] sm:leading-[2.1] tracking-[0.02em]"
               style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
             >
               문을 여는 순간 펼쳐지는 높은 천장과 웅장한 개방감,
@@ -86,7 +86,7 @@ export default function IntroSection() {
               인테리어는 공간 곳곳에 따뜻하고 고급스러운 숨결을 불어넣습니다.
             </p>
             <p
-              className="text-[#5C5147] text-[15px] sm:text-[16px] leading-[2.1] tracking-[0.02em]"
+              className="text-[#5C5147] text-[14px] sm:text-[15px] md:text-[16px] leading-[1.9] sm:leading-[2.1] tracking-[0.02em]"
               style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
             >
               우리는 창작자가 오직 결과물에만 집중할 수 있는 환경을 고민했습니다.
@@ -95,30 +95,30 @@ export default function IntroSection() {
               당신이 상상했던 모든 장면을 현실로 만들어 보세요.
             </p>
 
-            {/* Key stats */}
-            <div className="pt-6 flex flex-wrap gap-12">
+            {/* Key stats - responsive grid */}
+            <div className="pt-4 sm:pt-6 grid grid-cols-3 gap-4 sm:gap-0 sm:flex sm:flex-wrap sm:gap-12">
               <div>
-                <p className="font-serif text-[#4A3F35] text-3xl tracking-[0.04em]" style={{ fontWeight: 300 }}>
+                <p className="font-serif text-[#4A3F35] text-2xl sm:text-3xl tracking-[0.04em]" style={{ fontWeight: 300 }}>
                   58
-                  <span className="text-lg ml-1">평</span>
+                  <span className="text-base sm:text-lg ml-1">평</span>
                 </p>
-                <p className="text-[#9A8E82] text-[12px] tracking-[0.15em] mt-1" style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}>
+                <p className="text-[#9A8E82] text-[11px] sm:text-[12px] tracking-[0.12em] sm:tracking-[0.15em] mt-1" style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}>
                   전용 면적
                 </p>
               </div>
               <div>
-                <p className="font-serif text-[#4A3F35] text-3xl tracking-[0.04em]" style={{ fontWeight: 300 }}>
+                <p className="font-serif text-[#4A3F35] text-2xl sm:text-3xl tracking-[0.04em]" style={{ fontWeight: 300 }}>
                   100%
                 </p>
-                <p className="text-[#9A8E82] text-[12px] tracking-[0.15em] mt-1" style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}>
-                  프라이빗 독점 사용
+                <p className="text-[#9A8E82] text-[11px] sm:text-[12px] tracking-[0.12em] sm:tracking-[0.15em] mt-1" style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}>
+                  프라이빗 독점
                 </p>
               </div>
               <div>
-                <p className="font-serif text-[#4A3F35] text-3xl tracking-[0.04em]" style={{ fontWeight: 300 }}>
+                <p className="font-serif text-[#4A3F35] text-2xl sm:text-3xl tracking-[0.04em]" style={{ fontWeight: 300 }}>
                   1F
                 </p>
-                <p className="text-[#9A8E82] text-[12px] tracking-[0.15em] mt-1" style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}>
+                <p className="text-[#9A8E82] text-[11px] sm:text-[12px] tracking-[0.12em] sm:tracking-[0.15em] mt-1" style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}>
                   단독 주택
                 </p>
               </div>

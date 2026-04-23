@@ -8,7 +8,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="hero" className="relative h-screen w-full overflow-hidden">
+    <section id="hero" className="relative h-[100svh] w-full overflow-hidden">
       {/* Background Image with subtle zoom animation */}
       <motion.div
         className="absolute inset-0"
@@ -28,12 +28,12 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 text-center">
+      <div className="relative z-10 h-full flex flex-col items-center justify-center px-5 sm:px-6 text-center">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
-          className="text-white/70 text-[12px] sm:text-[13px] tracking-[0.4em] uppercase mb-8"
+          className="text-white/70 text-[11px] sm:text-[12px] md:text-[13px] tracking-[0.3em] sm:tracking-[0.4em] uppercase mb-6 sm:mb-8"
           style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
         >
           Private Luxury Studio
@@ -43,7 +43,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.6, delay: 0.8, ease: "easeOut" }}
-          className="font-serif text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-[0.08em] leading-[1.2]"
+          className="font-serif text-white text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-[0.06em] sm:tracking-[0.08em] leading-[1.25] sm:leading-[1.2]"
           style={{ fontWeight: 300 }}
         >
           빛이 머무는<br />
@@ -54,14 +54,14 @@ export default function HeroSection() {
           initial={{ opacity: 0, scaleX: 0 }}
           animate={{ opacity: 1, scaleX: 1 }}
           transition={{ duration: 1, delay: 1.4, ease: "easeOut" }}
-          className="w-14 h-[1px] bg-[#C8B89A]/60 my-9"
+          className="w-10 sm:w-14 h-[1px] bg-[#C8B89A]/60 my-6 sm:my-9"
         />
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 1.2, ease: "easeOut" }}
-          className="text-white/65 text-[14px] sm:text-[15px] tracking-[0.05em] leading-[1.9] max-w-md"
+          className="text-white/65 text-[13px] sm:text-[14px] md:text-[15px] tracking-[0.03em] sm:tracking-[0.05em] leading-[1.8] sm:leading-[1.9] max-w-[320px] sm:max-w-md"
           style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 200 }}
         >
           당신의 이야기가 작품이 되는 공간.<br />
@@ -75,7 +75,7 @@ export default function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.5, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 text-white/50 hover:text-white/80 transition-colors duration-500"
+        className="absolute bottom-8 sm:bottom-10 left-1/2 -translate-x-1/2 z-10 text-white/50 hover:text-white/80 transition-colors duration-500"
         aria-label="Scroll down"
       >
         <motion.div

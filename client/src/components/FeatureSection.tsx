@@ -41,7 +41,7 @@ export default function FeatureSection() {
     <section
       id="features"
       ref={ref}
-      className="py-28 sm:py-36 lg:py-44 px-6 sm:px-10"
+      className="py-20 sm:py-28 lg:py-44 px-5 sm:px-10"
       style={{ backgroundColor: "#FAF8F4" }}
     >
       <div className="max-w-[1100px] mx-auto">
@@ -50,24 +50,24 @@ export default function FeatureSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1, delay: 0.2 }}
-          className="text-center mb-24"
+          className="text-center mb-14 sm:mb-20 lg:mb-24"
         >
           <p
-            className="text-[12px] tracking-[0.35em] uppercase mb-6 text-[#9A8E82]"
+            className="text-[11px] sm:text-[12px] tracking-[0.35em] uppercase mb-5 sm:mb-6 text-[#9A8E82]"
             style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
           >
             Why Haemilsia
           </p>
           <h2
-            className="font-serif text-[#4A3F35] text-3xl sm:text-4xl lg:text-5xl tracking-[0.06em]"
+            className="font-serif text-[#4A3F35] text-[1.65rem] sm:text-3xl md:text-4xl lg:text-5xl tracking-[0.04em] sm:tracking-[0.06em]"
             style={{ fontWeight: 300 }}
           >
             Crafted for Creators
           </h2>
         </motion.div>
 
-        {/* Feature grid - 2x2 with elegant dividers */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-16 lg:gap-x-24 gap-y-16 lg:gap-y-20">
+        {/* Feature grid - 2x2 on desktop, 1 column on mobile */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-x-16 lg:gap-x-24 sm:gap-y-16 lg:gap-y-20">
           {features.map((feature, i) => (
             <motion.div
               key={feature.title}
@@ -76,23 +76,23 @@ export default function FeatureSection() {
               transition={{ duration: 1, delay: 0.3 + i * 0.15, ease: "easeOut" }}
               className="text-center relative"
             >
-              <div className="flex justify-center mb-7">
-                <div className="w-14 h-14 flex items-center justify-center border border-[#C8B89A]/40 rounded-full">
+              <div className="flex justify-center mb-5 sm:mb-7">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center border border-[#C8B89A]/40 rounded-full">
                   <feature.icon
-                    size={22}
+                    size={20}
                     strokeWidth={1.2}
-                    className="text-[#8A7E72]"
+                    className="text-[#8A7E72] sm:w-[22px] sm:h-[22px]"
                   />
                 </div>
               </div>
               <h3
-                className="font-serif text-[#4A3F35] text-xl sm:text-2xl tracking-[0.06em] mb-5"
+                className="font-serif text-[#4A3F35] text-lg sm:text-xl md:text-2xl tracking-[0.06em] mb-3 sm:mb-5"
                 style={{ fontWeight: 400 }}
               >
                 {feature.title}
               </h3>
               <p
-                className="text-[#6B6058] text-[14px] leading-[1.9] tracking-[0.01em] max-w-xs mx-auto"
+                className="text-[#6B6058] text-[13px] sm:text-[14px] leading-[1.8] sm:leading-[1.9] tracking-[0.01em] max-w-[280px] sm:max-w-xs mx-auto"
                 style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
               >
                 {feature.description}
@@ -106,14 +106,14 @@ export default function FeatureSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1, delay: 1 }}
-          className="mt-28 text-center"
+          className="mt-16 sm:mt-24 lg:mt-28 text-center"
         >
-          <div className="w-10 h-[1px] bg-[#C8B89A] mx-auto mb-12" />
-          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-3">
+          <div className="w-8 sm:w-10 h-[1px] bg-[#C8B89A] mx-auto mb-8 sm:mb-12" />
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 sm:gap-y-3">
             {useCases.map((item, i) => (
-              <span key={item} className="flex items-center gap-3">
+              <span key={item} className="flex items-center gap-2 sm:gap-3">
                 <span
-                  className="text-[13px] tracking-[0.1em] text-[#8A7E72]"
+                  className="text-[12px] sm:text-[13px] tracking-[0.08em] sm:tracking-[0.1em] text-[#8A7E72]"
                   style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
                 >
                   {item}
