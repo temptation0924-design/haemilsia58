@@ -1,3 +1,8 @@
+/*
+ * Footer — HAEMILSIA 58 Branding
+ * "58" uses Playfair Display Italic
+ */
+
 export default function Footer() {
   return (
     <footer
@@ -8,11 +13,24 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-8">
           {/* Logo & tagline */}
           <div>
-            <p
-              className="font-serif text-[#FAF8F4]/85 text-lg sm:text-xl tracking-[0.25em] mb-2 sm:mb-3"
-              style={{ fontWeight: 300 }}
-            >
-              HAEMILSIA
+            <p className="flex items-baseline gap-1.5 mb-2 sm:mb-3">
+              <span
+                className="text-[#FAF8F4]/85 text-lg sm:text-xl tracking-[0.25em]"
+                style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
+              >
+                HAEMILSIA
+              </span>
+              <span
+                className="text-[#C8B89A]/70 text-xl sm:text-2xl"
+                style={{
+                  fontFamily: "'Playfair Display', serif",
+                  fontWeight: 400,
+                  fontStyle: "italic",
+                  letterSpacing: "0.02em",
+                }}
+              >
+                58
+              </span>
             </p>
             <p
               className="text-[#FAF8F4]/35 text-[11px] sm:text-[12px] tracking-[0.12em] leading-[1.8]"
@@ -63,7 +81,7 @@ export default function Footer() {
           className="text-[#FAF8F4]/20 text-[10px] sm:text-[11px] tracking-[0.1em] text-center"
           style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 200 }}
         >
-          &copy; {new Date().getFullYear()} Haemilsia Opal Studio. All rights reserved.
+          &copy; {new Date().getFullYear()} Haemilsia 58 Studio. All rights reserved.
         </p>
       </div>
     </footer>

@@ -14,7 +14,7 @@ export default function CTASection() {
       <div className="absolute inset-0">
         <img
           src="/manus-storage/IMG_5397_e4f8c9fd.webp"
-          alt="해밀시아 스튜디오"
+          alt="해밀시아 58 스튜디오"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />
@@ -39,7 +39,7 @@ export default function CTASection() {
           className="font-serif text-white text-[1.65rem] sm:text-3xl md:text-4xl lg:text-5xl tracking-[0.04em] sm:tracking-[0.06em] mb-6 sm:mb-8 leading-[1.3]"
           style={{ fontWeight: 300 }}
         >
-          해밀시아에서<br />
+          해밀시아 58에서<br />
           당신만의 장면을 완성하세요.
         </motion.h2>
 

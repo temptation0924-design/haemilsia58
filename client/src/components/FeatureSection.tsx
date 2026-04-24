@@ -56,7 +56,7 @@ export default function FeatureSection() {
             className="text-[11px] sm:text-[12px] tracking-[0.35em] uppercase mb-5 sm:mb-6 text-[#9A8E82]"
             style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
           >
-            Why Haemilsia
+            Why Haemilsia 58
           </p>
           <h2
             className="font-serif text-[#4A3F35] text-[1.65rem] sm:text-3xl md:text-4xl lg:text-5xl tracking-[0.04em] sm:tracking-[0.06em]"

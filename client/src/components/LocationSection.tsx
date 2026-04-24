@@ -53,9 +53,9 @@ export default function LocationSection() {
     new google.maps.Marker({
       position: STUDIO_LOCATION,
       map,
-      title: "해밀시아 오팔 스튜디오",
+      title: "해밀시아 58 스튜디오",
       label: {
-        text: "HAEMILSIA",
+        text: "HAEMILSIA 58",
         color: "#4A3F35",
         fontSize: "11px",
         fontWeight: "400",

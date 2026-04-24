@@ -18,7 +18,7 @@ export default function HeroSection() {
       >
         <img
           src="/manus-storage/IMG_5404_6c2f447c.webp"
-          alt="해밀시아 스튜디오 다이닝"
+          alt="해밀시아 58 스튜디오 다이닝"
           className="w-full h-full object-cover"
         />
       </motion.div>
@@ -36,7 +36,19 @@ export default function HeroSection() {
           className="text-white/70 text-[11px] sm:text-[12px] md:text-[13px] tracking-[0.3em] sm:tracking-[0.4em] uppercase mb-6 sm:mb-8"
           style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
         >
-          Private Luxury Studio
+          Haemilsia{" "}
+            <span
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                fontWeight: 400,
+                fontStyle: "italic",
+                letterSpacing: "0.02em",
+              }}
+              className="text-[#C8B89A]/80"
+            >
+              58
+            </span>
+            {" "}Studio
         </motion.p>
 
         <motion.h1

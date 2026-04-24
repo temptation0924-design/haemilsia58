@@ -1,3 +1,9 @@
+/*
+ * Header — HAEMILSIA 58 Branding
+ * "58" uses Playfair Display Italic for a distinctive, editorial feel
+ * "HAEMILSIA" uses Cormorant Garamond Light (existing serif)
+ */
+
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -7,8 +13,37 @@ const navItems = [
   { label: "Space", href: "#space" },
   { label: "Features", href: "#features" },
   { label: "Pricing", href: "#pricing" },
+  { label: "Gallery", href: "#gallery" },
   { label: "Location", href: "#location" },
 ];
+
+function BrandLogo({ color }: { color: "light" | "dark" }) {
+  const textColor = color === "light" ? "text-white" : "text-[#4A3F35]";
+  const accentColor = color === "light" ? "text-[#C8B89A]" : "text-[#8A7E72]";
+
+  return (
+    <span className="flex items-baseline gap-1.5 sm:gap-2">
+      <span
+        className={`text-base sm:text-lg lg:text-xl tracking-[0.25em] ${textColor} transition-colors duration-500`}
+        style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
+      >
+        HAEMILSIA
+      </span>
+      <span
+        className={`text-xl sm:text-2xl lg:text-[1.7rem] ${accentColor} transition-colors duration-500`}
+        style={{
+          fontFamily: "'Playfair Display', serif",
+          fontWeight: 400,
+          fontStyle: "italic",
+          lineHeight: 1,
+          letterSpacing: "0.02em",
+        }}
+      >
+        58
+      </span>
+    </span>
+  );
+}
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -53,24 +88,17 @@ export default function Header() {
               onClick={(e) => { e.preventDefault(); handleNavClick("#hero"); }}
               className="relative z-10"
             >
-              <span
-                className={`font-serif text-lg sm:text-xl lg:text-2xl tracking-[0.25em] transition-colors duration-500 ${
-                  scrolled || mobileOpen ? "text-[#4A3F35]" : "text-white"
-                }`}
-                style={{ fontWeight: 300 }}
-              >
-                HAEMILSIA
-              </span>
+              <BrandLogo color={scrolled || mobileOpen ? "dark" : "light"} />
             </a>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-10">
+            <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={(e) => { e.preventDefault(); handleNavClick(item.href); }}
-                  className={`text-[13px] tracking-[0.2em] uppercase transition-all duration-500 hover:opacity-60 ${
+                  className={`text-[12px] xl:text-[13px] tracking-[0.2em] uppercase transition-all duration-500 hover:opacity-60 ${
                     scrolled ? "text-[#4A3F35]" : "text-white/90"
                   }`}
                   style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
@@ -81,7 +109,7 @@ export default function Header() {
               <a
                 href="#cta"
                 onClick={(e) => { e.preventDefault(); handleNavClick("#cta"); }}
-                className={`text-[13px] tracking-[0.15em] uppercase px-6 py-2.5 border transition-all duration-500 hover:opacity-80 ${
+                className={`text-[12px] xl:text-[13px] tracking-[0.15em] uppercase px-5 xl:px-6 py-2.5 border transition-all duration-500 hover:opacity-80 ${
                   scrolled
                     ? "border-[#4A3F35] text-[#4A3F35] hover:bg-[#4A3F35] hover:text-[#FAF8F4]"
                     : "border-white/70 text-white hover:bg-white/10"
@@ -117,7 +145,7 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile Menu Overlay - improved spacing and touch targets */}
+      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div

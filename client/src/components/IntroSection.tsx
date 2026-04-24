@@ -54,7 +54,7 @@ export default function IntroSection() {
             <div className="relative overflow-hidden">
               <img
                 src="/manus-storage/IMG_5401_7e0eb858.webp"
-                alt="해밀시아 스튜디오 다이닝 공간"
+                alt="해밀시아 58 스튜디오 다이닝 공간"
                 className="w-full h-auto object-cover"
                 style={{ aspectRatio: "3/4" }}
               />
@@ -72,7 +72,7 @@ export default function IntroSection() {
               className="text-[#5C5147] text-[14px] sm:text-[15px] md:text-[16px] leading-[1.9] sm:leading-[2.1] tracking-[0.02em]"
               style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
             >
-              해밀시아 오팔 스튜디오는 경기도 화성에 자리한
+              해밀시아 58 스튜디오는 경기도 화성에 자리한
               프라이빗 고급 대저택형 촬영 공간입니다.
             </p>
             <p
