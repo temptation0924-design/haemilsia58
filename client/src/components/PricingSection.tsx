@@ -21,10 +21,22 @@ const timeSlots = [
     note: "오후 골든아워 활용 가능",
   },
   {
+    label: "C타임",
+    time: "22:00 – 04:00",
+    duration: "6시간",
+    note: "새벽 감성의 야간 촬영",
+  },
+  {
     label: "올데이",
     time: "09:00 – 20:00",
     duration: "11시간",
     note: "하루 종일 여유로운 촬영",
+  },
+  {
+    label: "풀타임",
+    time: "09:00 – 04:00",
+    duration: "19시간",
+    note: "낮부터 새벽까지 완전한 자유",
   },
 ];
 
@@ -100,7 +112,7 @@ export default function PricingSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 mb-16 sm:mb-24 lg:mb-28"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5 lg:gap-4 mb-16 sm:mb-24 lg:mb-28"
         >
           {timeSlots.map((slot, i) => (
             <motion.div
