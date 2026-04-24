@@ -2,32 +2,70 @@
  * Gallery Section — Grid Layout
  * Design: "Quiet Luxury" — Asymmetric masonry-style grid
  * All images visible at once, no horizontal scroll needed
+ * Updated: Added interior photos (bedroom, living room, dressing room, bathroom, aerial)
  * NOTE: No duplicate images with Hero, Intro, SpacePreview, or CTA sections
  */
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "@/hooks/useInView";
-import { X } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const galleryImages = [
+  // Outdoor
   { src: "/manus-storage/IMG_5411_623496da.webp", alt: "소나무 정원과 자갈길", span: "large" },
   { src: "/manus-storage/IMG_5425_e95a0793.webp", alt: "테라스 라운지 야경", span: "small" },
   { src: "/manus-storage/IMG_5415_6780e7e5.webp", alt: "중정과 건물 외관", span: "small" },
-  { src: "/manus-storage/IMG_5431_869b8979.webp", alt: "정원 전경", span: "large" },
+  // Interior - Living Room
+  { src: "/manus-storage/haemilsia_new_10_16b3e352.webp", alt: "거실 라운지", span: "large" },
+  // Outdoor
   { src: "/manus-storage/IMG_5421_d848cd22.webp", alt: "정원 야경", span: "small" },
+  // Interior - Bedroom detail
+  { src: "/manus-storage/haemilsia_new_07_d9338113.jpeg", alt: "침실 PH5 조명 디테일", span: "small" },
+  // Interior - Bedroom with garden view
+  { src: "/manus-storage/haemilsia_new_06_f64b9ebd.webp", alt: "침실 정원 뷰", span: "small" },
+  // Outdoor
   { src: "/manus-storage/IMG_5427_4c2257b9.webp", alt: "퍼골라 라운지", span: "small" },
-  { src: "/manus-storage/IMG_5453_a43accd2.webp", alt: "야외 다이닝", span: "small" },
+  // Interior - Coral Dressing Room
+  { src: "/manus-storage/haemilsia_new_04_67169549.webp", alt: "코랄 드레스룸", span: "large" },
+  // Interior - White Bedroom
+  { src: "/manus-storage/haemilsia_new_03_f5ccc1e1.webp", alt: "화이트 침실", span: "small" },
+  // Outdoor
   { src: "/manus-storage/IMG_5417_0e5fe16f.webp", alt: "정원 카페 테이블", span: "small" },
+  // Outdoor
   { src: "/manus-storage/IMG_5436_4e45df93.webp", alt: "한옥 정자", span: "large" },
+  // Interior - Bathroom
+  { src: "/manus-storage/haemilsia_new_13_62f0bde5.webp", alt: "대리석 욕실", span: "small" },
+  // Interior - Corridor
+  { src: "/manus-storage/haemilsia_new_12_8331d899.webp", alt: "코랄 복도", span: "small" },
+  // Outdoor
   { src: "/manus-storage/IMG_5419_ac358a87.webp", alt: "정원과 건물 전경", span: "large" },
+  // Interior - Pink hallway
+  { src: "/manus-storage/haemilsia_new_05_2d77037b.webp", alt: "핑크 타일 현관", span: "small" },
+  // Outdoor
   { src: "/manus-storage/IMG_5428_f079d681.webp", alt: "야외 테라스 전경", span: "small" },
+  // Aerial - Night
+  { src: "/manus-storage/haemilsia_new_01_381638d8.webp", alt: "스튜디오 항공 야경", span: "large" },
+  { src: "/manus-storage/IMG_5453_a43accd2.webp", alt: "야외 다이닝", span: "small" },
   { src: "/manus-storage/IMG_5455_b620b187.webp", alt: "정원 그네", span: "small" },
 ];
 
 export default function GalleryStrip() {
   const [ref, isInView] = useInView({ threshold: 0.05 });
-  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+  const openLightbox = (index: number) => setSelectedIndex(index);
+  const closeLightbox = () => setSelectedIndex(null);
+  const goNext = () => {
+    if (selectedIndex !== null) {
+      setSelectedIndex((selectedIndex + 1) % galleryImages.length);
+    }
+  };
+  const goPrev = () => {
+    if (selectedIndex !== null) {
+      setSelectedIndex((selectedIndex - 1 + galleryImages.length) % galleryImages.length);
+    }
+  };
 
   return (
     <>
@@ -56,6 +94,12 @@ export default function GalleryStrip() {
           >
             공간의 순간들
           </h2>
+          <p
+            className="mt-4 text-[#9A8E82] text-[13px] sm:text-[14px] tracking-[0.04em]"
+            style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
+          >
+            실내와 야외, 낮과 밤이 만들어내는 다채로운 장면들
+          </p>
         </motion.div>
 
         {/* Asymmetric Grid */}
@@ -68,7 +112,7 @@ export default function GalleryStrip() {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{
                   duration: 0.8,
-                  delay: 0.3 + i * 0.08,
+                  delay: 0.3 + i * 0.06,
                   ease: "easeOut",
                 }}
                 className={`relative overflow-hidden group cursor-pointer ${
@@ -76,7 +120,7 @@ export default function GalleryStrip() {
                     ? "col-span-2 md:col-span-2 aspect-[16/9]"
                     : "col-span-1 aspect-[3/4]"
                 }`}
-                onClick={() => setSelectedImage(img)}
+                onClick={() => openLightbox(i)}
               >
                 <img
                   src={img.src}
@@ -110,27 +154,44 @@ export default function GalleryStrip() {
         </div>
       </section>
 
-      {/* Lightbox Modal */}
+      {/* Lightbox Modal with Navigation */}
       <AnimatePresence>
-        {selectedImage && (
+        {selectedIndex !== null && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 sm:p-8"
-            onClick={() => setSelectedImage(null)}
+            onClick={closeLightbox}
           >
             {/* Close button */}
             <button
               className="absolute top-4 right-4 sm:top-6 sm:right-6 z-[110] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-white/70 hover:text-white transition-colors"
-              onClick={() => setSelectedImage(null)}
+              onClick={closeLightbox}
             >
               <X className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1} />
             </button>
 
+            {/* Previous button */}
+            <button
+              className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 z-[110] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-white/50 hover:text-white transition-colors"
+              onClick={(e) => { e.stopPropagation(); goPrev(); }}
+            >
+              <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8" strokeWidth={1} />
+            </button>
+
+            {/* Next button */}
+            <button
+              className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 z-[110] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-white/50 hover:text-white transition-colors"
+              onClick={(e) => { e.stopPropagation(); goNext(); }}
+            >
+              <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8" strokeWidth={1} />
+            </button>
+
             {/* Image */}
             <motion.div
+              key={selectedIndex}
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
@@ -139,16 +200,24 @@ export default function GalleryStrip() {
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={selectedImage.src}
-                alt={selectedImage.alt}
+                src={galleryImages[selectedIndex].src}
+                alt={galleryImages[selectedIndex].alt}
                 className="max-w-full max-h-[80vh] object-contain"
               />
-              <p
-                className="text-center text-white/60 text-[12px] sm:text-[13px] tracking-[0.15em] mt-4"
-                style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
-              >
-                {selectedImage.alt}
-              </p>
+              <div className="text-center mt-4">
+                <p
+                  className="text-white/60 text-[12px] sm:text-[13px] tracking-[0.15em]"
+                  style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
+                >
+                  {galleryImages[selectedIndex].alt}
+                </p>
+                <p
+                  className="text-white/30 text-[11px] mt-1"
+                  style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
+                >
+                  {selectedIndex + 1} / {galleryImages.length}
+                </p>
+              </div>
             </motion.div>
           </motion.div>
         )}

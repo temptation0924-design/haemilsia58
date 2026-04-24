@@ -1,7 +1,19 @@
+/*
+ * Space Preview Section — Asymmetric Grid
+ * Design: "Quiet Luxury" — Curated space showcase
+ * Updated: Added interior spaces (living room, bedroom, dressing room, bathroom)
+ */
+
 import { motion } from "framer-motion";
 import { useInView } from "@/hooks/useInView";
 
 const spaces = [
+  {
+    title: "The Grand Living",
+    subtitle: "거실",
+    description: "양쪽 대형 슬라이딩 도어로 정원이 한눈에 들어오는 넓은 거실. 캐멀 가죽 소파와 간접조명이 만들어내는 모던 럭셔리 공간입니다.",
+    image: "/manus-storage/haemilsia_new_09_f9b2e88e.webp",
+  },
   {
     title: "The Grand Living & Dining",
     subtitle: "거실 및 다이닝",
@@ -9,16 +21,22 @@ const spaces = [
     image: "/manus-storage/IMG_5399_b830fbe1.webp",
   },
   {
+    title: "Master Bedroom",
+    subtitle: "침실",
+    description: "오크 원목 바닥과 터프팅 헤드보드, PH5 펜던트 조명이 어우러진 감각적인 침실. 대형 창문 너머 정원 뷰가 펼쳐집니다.",
+    image: "/manus-storage/haemilsia_new_08_df1896f6.webp",
+  },
+  {
+    title: "Coral Dressing Room",
+    subtitle: "드레스룸",
+    description: "코랄 핑크 벽면과 화이트 가구가 만들어내는 유니크한 색감. 패션, 뷰티 촬영에 최적화된 감각적인 공간입니다.",
+    image: "/manus-storage/haemilsia_new_11_0f8ef8b3.webp",
+  },
+  {
     title: "Vintage Kitchen",
     subtitle: "주방",
     description: "고급스러운 빌트인과 디테일한 소품들. 생활감이 묻어나는 따뜻하고 세련된 주방의 모습을 담아냅니다.",
     image: "/manus-storage/IMG_5405_6f5d3436.webp",
-  },
-  {
-    title: "Living Room",
-    subtitle: "거실 공간",
-    description: "모던한 조명과 넓은 공간이 만들어내는 감성. 인터뷰나 룩북 촬영에 깊이를 더해주는 프라이빗한 공간입니다.",
-    image: "/manus-storage/IMG_5392_8f246539.webp",
   },
   {
     title: "Outdoor Terrace & Garden",
@@ -88,7 +106,7 @@ function SpaceCard({
 }
 
 export default function SpacePreview() {
-  const [ref, isInView] = useInView({ threshold: 0.15 });
+  const [ref, isInView] = useInView({ threshold: 0.1 });
 
   return (
     <section
@@ -119,9 +137,9 @@ export default function SpacePreview() {
           </h2>
         </motion.div>
 
-        {/* Asymmetric Grid Layout */}
+        {/* Asymmetric Grid Layout - 6 spaces */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-4 lg:gap-5">
-          {/* Large: Living & Dining - spans 7 columns on desktop, full on mobile */}
+          {/* Row 1: Grand Living (wide) + Dining (narrow) */}
           <div className="md:col-span-7">
             <SpaceCard
               space={spaces[0]}
@@ -133,21 +151,34 @@ export default function SpacePreview() {
               isInView={isInView}
             />
           </div>
-
-          {/* Right column: Kitchen + Living Room stacked */}
-          <div className="md:col-span-5 flex flex-col gap-3 sm:gap-4 lg:gap-5">
+          <div className="md:col-span-5">
             <SpaceCard
               space={spaces[1]}
-              aspectClass="aspect-[3/2]"
+              aspectClass="aspect-[4/3]"
               titleSize="text-lg sm:text-xl md:text-2xl"
               subtitleSize="text-[11px] sm:text-[12px]"
               descSize="text-[11px] sm:text-[12px] md:text-[13px]"
               delay={0.45}
               isInView={isInView}
             />
+          </div>
+
+          {/* Row 2: Bedroom (narrow) + Dressing Room (narrow) + Kitchen (narrow) */}
+          <div className="md:col-span-4">
             <SpaceCard
               space={spaces[2]}
-              aspectClass="aspect-[3/2]"
+              aspectClass="aspect-[3/4]"
+              titleSize="text-lg sm:text-xl md:text-2xl"
+              subtitleSize="text-[11px] sm:text-[12px]"
+              descSize="text-[11px] sm:text-[12px] md:text-[13px]"
+              delay={0.5}
+              isInView={isInView}
+            />
+          </div>
+          <div className="md:col-span-4">
+            <SpaceCard
+              space={spaces[3]}
+              aspectClass="aspect-[3/4]"
               titleSize="text-lg sm:text-xl md:text-2xl"
               subtitleSize="text-[11px] sm:text-[12px]"
               descSize="text-[11px] sm:text-[12px] md:text-[13px]"
@@ -155,16 +186,27 @@ export default function SpacePreview() {
               isInView={isInView}
             />
           </div>
+          <div className="md:col-span-4">
+            <SpaceCard
+              space={spaces[4]}
+              aspectClass="aspect-[3/4]"
+              titleSize="text-lg sm:text-xl md:text-2xl"
+              subtitleSize="text-[11px] sm:text-[12px]"
+              descSize="text-[11px] sm:text-[12px] md:text-[13px]"
+              delay={0.7}
+              isInView={isInView}
+            />
+          </div>
 
-          {/* Full width: Outdoor Terrace - taller on mobile */}
+          {/* Row 3: Outdoor Terrace - full width panoramic */}
           <div className="md:col-span-12">
             <SpaceCard
-              space={spaces[3]}
+              space={spaces[5]}
               aspectClass="aspect-[16/9] md:aspect-[21/8]"
               titleSize="text-xl sm:text-2xl md:text-3xl"
               subtitleSize="text-[11px] sm:text-[12px] md:text-[13px]"
               descSize="text-[12px] sm:text-[13px] md:text-[14px]"
-              delay={0.75}
+              delay={0.8}
               isInView={isInView}
             />
           </div>
