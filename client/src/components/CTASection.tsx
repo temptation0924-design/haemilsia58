@@ -13,7 +13,7 @@ export default function CTASection() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="/manus-storage/IMG_5397_e4f8c9fd.webp"
+          src="/images/IMG_5397.webp"
           alt="해밀시아 58 스튜디오"
           className="w-full h-full object-cover"
         />

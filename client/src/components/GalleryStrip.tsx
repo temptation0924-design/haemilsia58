@@ -13,41 +13,41 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const galleryImages = [
   // Outdoor
-  { src: "/manus-storage/IMG_5411_623496da.webp", alt: "소나무 정원과 자갈길", span: "large" },
-  { src: "/manus-storage/IMG_5425_e95a0793.webp", alt: "테라스 라운지 야경", span: "small" },
-  { src: "/manus-storage/IMG_5415_6780e7e5.webp", alt: "중정과 건물 외관", span: "small" },
+  { src: "/images/IMG_5411.webp", alt: "소나무 정원과 자갈길", span: "large" },
+  { src: "/images/IMG_5425.webp", alt: "테라스 라운지 야경", span: "small" },
+  { src: "/images/IMG_5415.webp", alt: "중정과 건물 외관", span: "small" },
   // Interior - Living Room
-  { src: "/manus-storage/haemilsia_new_10_16b3e352.webp", alt: "거실 라운지", span: "large" },
+  { src: "/images/haemilsia_new_10.webp", alt: "거실 라운지", span: "large" },
   // Outdoor
-  { src: "/manus-storage/IMG_5421_d848cd22.webp", alt: "정원 야경", span: "small" },
+  { src: "/images/IMG_5421.webp", alt: "정원 야경", span: "small" },
   // Interior - Bedroom detail
-  { src: "/manus-storage/haemilsia_new_07_d9338113.jpeg", alt: "침실 PH5 조명 디테일", span: "small" },
+  { src: "/images/haemilsia_new_07.webp", alt: "침실 PH5 조명 디테일", span: "small" },
   // Interior - Bedroom with garden view
-  { src: "/manus-storage/haemilsia_new_06_f64b9ebd.webp", alt: "침실 정원 뷰", span: "small" },
+  { src: "/images/haemilsia_new_06.webp", alt: "침실 정원 뷰", span: "small" },
   // Outdoor
-  { src: "/manus-storage/IMG_5427_4c2257b9.webp", alt: "퍼골라 라운지", span: "small" },
+  { src: "/images/IMG_5427.webp", alt: "퍼골라 라운지", span: "small" },
   // Interior - Coral Dressing Room
-  { src: "/manus-storage/haemilsia_new_04_67169549.webp", alt: "코랄 드레스룸", span: "large" },
+  { src: "/images/haemilsia_new_04.webp", alt: "코랄 드레스룸", span: "large" },
   // Interior - White Bedroom
-  { src: "/manus-storage/haemilsia_new_03_f5ccc1e1.webp", alt: "화이트 침실", span: "small" },
+  { src: "/images/haemilsia_new_03.webp", alt: "화이트 침실", span: "small" },
   // Outdoor
-  { src: "/manus-storage/IMG_5417_0e5fe16f.webp", alt: "정원 카페 테이블", span: "small" },
+  { src: "/images/IMG_5417.webp", alt: "정원 카페 테이블", span: "small" },
   // Outdoor
-  { src: "/manus-storage/IMG_5436_4e45df93.webp", alt: "한옥 정자", span: "large" },
+  { src: "/images/IMG_5436.webp", alt: "한옥 정자", span: "large" },
   // Interior - Bathroom
-  { src: "/manus-storage/haemilsia_new_13_62f0bde5.webp", alt: "대리석 욕실", span: "small" },
+  { src: "/images/haemilsia_new_13.webp", alt: "대리석 욕실", span: "small" },
   // Interior - Corridor
-  { src: "/manus-storage/haemilsia_new_12_8331d899.webp", alt: "코랄 복도", span: "small" },
+  { src: "/images/haemilsia_new_12.webp", alt: "코랄 복도", span: "small" },
   // Outdoor
-  { src: "/manus-storage/IMG_5419_ac358a87.webp", alt: "정원과 건물 전경", span: "large" },
+  { src: "/images/IMG_5419.webp", alt: "정원과 건물 전경", span: "large" },
   // Interior - Pink hallway
-  { src: "/manus-storage/haemilsia_new_05_2d77037b.webp", alt: "핑크 타일 현관", span: "small" },
+  { src: "/images/haemilsia_new_05.webp", alt: "핑크 타일 현관", span: "small" },
   // Outdoor
-  { src: "/manus-storage/IMG_5428_f079d681.webp", alt: "야외 테라스 전경", span: "small" },
+  { src: "/images/IMG_5428.webp", alt: "야외 테라스 전경", span: "small" },
   // Aerial - Night
-  { src: "/manus-storage/haemilsia_new_01_381638d8.webp", alt: "스튜디오 항공 야경", span: "large" },
-  { src: "/manus-storage/IMG_5453_a43accd2.webp", alt: "야외 다이닝", span: "small" },
-  { src: "/manus-storage/IMG_5455_b620b187.webp", alt: "정원 그네", span: "small" },
+  { src: "/images/haemilsia_new_01.webp", alt: "스튜디오 항공 야경", span: "large" },
+  { src: "/images/IMG_5453.webp", alt: "야외 다이닝", span: "small" },
+  { src: "/images/IMG_5455.webp", alt: "정원 그네", span: "small" },
 ];
 
 export default function GalleryStrip() {

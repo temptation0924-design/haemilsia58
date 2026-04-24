@@ -53,7 +53,7 @@ export default function IntroSection() {
           >
             <div className="relative overflow-hidden">
               <img
-                src="/manus-storage/IMG_5401_7e0eb858.webp"
+                src="/images/IMG_5401.webp"
                 alt="해밀시아 58 스튜디오 다이닝 공간"
                 className="w-full h-auto object-cover"
                 style={{ aspectRatio: "3/4" }}

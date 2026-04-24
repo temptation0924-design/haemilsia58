@@ -17,7 +17,7 @@ export default function HeroSection() {
         transition={{ duration: 8, ease: "easeOut" }}
       >
         <img
-          src="/manus-storage/IMG_5404_6c2f447c.webp"
+          src="/images/IMG_5404.webp"
           alt="해밀시아 58 스튜디오 다이닝"
           className="w-full h-full object-cover"
         />

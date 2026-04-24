@@ -12,37 +12,37 @@ const spaces = [
     title: "The Grand Living",
     subtitle: "거실",
     description: "양쪽 대형 슬라이딩 도어로 정원이 한눈에 들어오는 넓은 거실. 캐멀 가죽 소파와 간접조명이 만들어내는 모던 럭셔리 공간입니다.",
-    image: "/manus-storage/haemilsia_new_09_f9b2e88e.webp",
+    image: "/images/haemilsia_new_09.webp",
   },
   {
     title: "The Grand Living & Dining",
     subtitle: "거실 및 다이닝",
     description: "자연광이 쏟아지는 대리석 다이닝과 모던 럭셔리의 조화. 웅장한 스케일의 라이프스타일 씬을 연출해 보세요.",
-    image: "/manus-storage/IMG_5399_b830fbe1.webp",
+    image: "/images/IMG_5399.webp",
   },
   {
     title: "Master Bedroom",
     subtitle: "침실",
     description: "오크 원목 바닥과 터프팅 헤드보드, PH5 펜던트 조명이 어우러진 감각적인 침실. 대형 창문 너머 정원 뷰가 펼쳐집니다.",
-    image: "/manus-storage/haemilsia_new_08_df1896f6.webp",
+    image: "/images/haemilsia_new_08.webp",
   },
   {
     title: "Coral Dressing Room",
     subtitle: "드레스룸",
     description: "코랄 핑크 벽면과 화이트 가구가 만들어내는 유니크한 색감. 패션, 뷰티 촬영에 최적화된 감각적인 공간입니다.",
-    image: "/manus-storage/haemilsia_new_11_0f8ef8b3.webp",
+    image: "/images/haemilsia_new_11.webp",
   },
   {
     title: "Vintage Kitchen",
     subtitle: "주방",
     description: "고급스러운 빌트인과 디테일한 소품들. 생활감이 묻어나는 따뜻하고 세련된 주방의 모습을 담아냅니다.",
-    image: "/manus-storage/IMG_5405_6f5d3436.webp",
+    image: "/images/IMG_5405.webp",
   },
   {
     title: "Outdoor Terrace & Garden",
     subtitle: "야외 테라스 및 정원",
     description: "한국식 정원의 고즈넉함과 모던한 테라스의 만남. 실내와는 또 다른 다채로운 야외 씬을 제공합니다.",
-    image: "/manus-storage/IMG_5414_d8153493.webp",
+    image: "/images/IMG_5414.webp",
   },
 ];
 
