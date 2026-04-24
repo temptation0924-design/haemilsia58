@@ -11,18 +11,18 @@ import { useInView } from "@/hooks/useInView";
 import { X } from "lucide-react";
 
 const galleryImages = [
-  { src: "/manus-storage/IMG_5411_623496da.webp", alt: "거실 전경", span: "large" },
-  { src: "/manus-storage/IMG_5425_e95a0793.webp", alt: "주방 공간", span: "small" },
-  { src: "/manus-storage/IMG_5415_6780e7e5.webp", alt: "인테리어 디테일", span: "small" },
-  { src: "/manus-storage/IMG_5431_869b8979.webp", alt: "야외 테라스", span: "large" },
-  { src: "/manus-storage/IMG_5421_d848cd22.webp", alt: "주방 디테일", span: "small" },
-  { src: "/manus-storage/IMG_5427_4c2257b9.webp", alt: "프라이빗 룸", span: "small" },
-  { src: "/manus-storage/IMG_5453_a43accd2.webp", alt: "야외 정원", span: "large" },
-  { src: "/manus-storage/IMG_5417_0e5fe16f.webp", alt: "거실 디테일", span: "small" },
-  { src: "/manus-storage/IMG_5436_4e45df93.webp", alt: "테라스 라운지", span: "small" },
-  { src: "/manus-storage/IMG_5419_ac358a87.webp", alt: "정원 산책로", span: "large" },
-  { src: "/manus-storage/IMG_5428_f079d681.webp", alt: "인테리어 소품", span: "small" },
-  { src: "/manus-storage/IMG_5455_b620b187.webp", alt: "야외 풍경", span: "small" },
+  { src: "/manus-storage/IMG_5411_623496da.webp", alt: "소나무 정원과 자갈길", span: "large" },
+  { src: "/manus-storage/IMG_5425_e95a0793.webp", alt: "테라스 라운지 야경", span: "small" },
+  { src: "/manus-storage/IMG_5415_6780e7e5.webp", alt: "중정과 건물 외관", span: "small" },
+  { src: "/manus-storage/IMG_5431_869b8979.webp", alt: "정원 전경", span: "large" },
+  { src: "/manus-storage/IMG_5421_d848cd22.webp", alt: "정원 야경", span: "small" },
+  { src: "/manus-storage/IMG_5427_4c2257b9.webp", alt: "퍼골라 라운지", span: "small" },
+  { src: "/manus-storage/IMG_5453_a43accd2.webp", alt: "야외 다이닝", span: "large" },
+  { src: "/manus-storage/IMG_5417_0e5fe16f.webp", alt: "정원 카페 테이블", span: "small" },
+  { src: "/manus-storage/IMG_5436_4e45df93.webp", alt: "한옥 정자", span: "small" },
+  { src: "/manus-storage/IMG_5419_ac358a87.webp", alt: "정원과 건물 전경", span: "large" },
+  { src: "/manus-storage/IMG_5428_f079d681.webp", alt: "야외 테라스 전경", span: "small" },
+  { src: "/manus-storage/IMG_5455_b620b187.webp", alt: "정원 그네", span: "small" },
 ];
 
 export default function GalleryStrip() {
