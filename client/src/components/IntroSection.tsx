@@ -96,14 +96,23 @@ export default function IntroSection() {
             </p>
 
             {/* Key stats - responsive grid */}
-            <div className="pt-4 sm:pt-6 grid grid-cols-3 gap-4 sm:gap-0 sm:flex sm:flex-wrap sm:gap-12">
+            <div className="pt-4 sm:pt-6 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-0 sm:flex sm:flex-wrap sm:gap-12">
               <div>
                 <p className="font-serif text-[#4A3F35] text-2xl sm:text-3xl tracking-[0.04em]" style={{ fontWeight: 300 }}>
-                  58
+                  100
                   <span className="text-base sm:text-lg ml-1">평</span>
                 </p>
                 <p className="text-[#9A8E82] text-[11px] sm:text-[12px] tracking-[0.12em] sm:tracking-[0.15em] mt-1" style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}>
                   전용 면적
+                </p>
+              </div>
+              <div>
+                <p className="font-serif text-[#4A3F35] text-2xl sm:text-3xl tracking-[0.04em]" style={{ fontWeight: 300 }}>
+                  350
+                  <span className="text-base sm:text-lg ml-1">평</span>
+                </p>
+                <p className="text-[#9A8E82] text-[11px] sm:text-[12px] tracking-[0.12em] sm:tracking-[0.15em] mt-1" style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}>
+                  대지 면적
                 </p>
               </div>
               <div>
