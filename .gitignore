@@ -113,3 +113,6 @@ client/public/__manus__/version.json
 
 # Manus logs
 .manus-logs/
+
+# Local Netlify folder
+.netlify
