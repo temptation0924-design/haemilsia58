@@ -6,10 +6,19 @@
  * NOTE: No duplicate images with Hero, Intro, SpacePreview, or CTA sections
  */
 
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "@/hooks/useInView";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+
+// 갤러리 중간 감성 카피 (3장마다 1개 노출)
+const interstitialQuotes = [
+  { line1: "빛과 그림자가", line2: "풍경을 그려내는 자리" },
+  { line1: "자연의 숨결이", line2: "시간을 어루만지는 순간" },
+  { line1: "침묵 속에서도", line2: "공간은 이야기를 건넵니다" },
+  { line1: "작은 빛 하나가", line2: "하루를 완성하는 오후" },
+  { line1: "머무는 모든 발걸음이", line2: "이곳의 시가 됩니다" },
+];
 
 const galleryImages = [
   // Outdoor
@@ -80,7 +89,7 @@ export default function GalleryStrip() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1, delay: 0.2 }}
-          className="text-center mb-10 sm:mb-16"
+          className="text-center mb-14 sm:mb-20"
         >
           <p
             className="text-[11px] sm:text-[12px] tracking-[0.35em] uppercase text-[#9A8E82] mb-4 sm:mb-6"
@@ -94,63 +103,120 @@ export default function GalleryStrip() {
           >
             공간의 순간들
           </h2>
+
+          {/* 감성 서브 라인 */}
+          <div className="w-10 sm:w-14 h-[1px] bg-[#C8B89A]/50 mx-auto my-6 sm:my-8" />
+
           <p
-            className="mt-4 text-[#9A8E82] text-[13px] sm:text-[14px] tracking-[0.04em]"
-            style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
+            className="text-[#7A6E62] text-[14px] sm:text-[15px] md:text-[16px] tracking-[0.03em] leading-[2]"
+            style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300, wordBreak: "keep-all" }}
           >
-            실내와 야외, 낮과 밤이 만들어내는 다채로운 장면들
+            빛이 머무는 자리마다<br />
+            이야기가 태어납니다.
+          </p>
+          <p
+            className="mt-6 sm:mt-8 text-[#9A8E82] text-[12px] sm:text-[13px] tracking-[0.04em] leading-[1.9]"
+            style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300, wordBreak: "keep-all" }}
+          >
+            실내와 야외, 낮과 밤이<br />
+            만들어내는 다채로운 장면들을 담았습니다.
           </p>
         </motion.div>
 
         {/* Asymmetric Grid */}
         <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
-            {galleryImages.map((img, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{
-                  duration: 0.8,
-                  delay: 0.3 + i * 0.06,
-                  ease: "easeOut",
-                }}
-                className={`relative overflow-hidden group cursor-pointer ${
-                  img.span === "large"
-                    ? "col-span-2 md:col-span-2 aspect-[16/9]"
-                    : "col-span-1 aspect-[3/4]"
-                }`}
-                onClick={() => openLightbox(i)}
-              >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-110"
-                  loading="eager"
-                />
-                {/* Hover overlay — desktop */}
-                <div className="absolute inset-0 bg-[#4A3F35]/0 group-hover:bg-[#4A3F35]/25 transition-all duration-700 hidden md:flex items-end">
-                  <div className="w-full p-4 lg:p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                    <p
-                      className="text-white text-[12px] lg:text-[13px] tracking-[0.15em]"
-                      style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+            {galleryImages.map((img, i) => {
+              // 3장마다 감성 카피 삽입 (index 3, 6, 9, 12, 15)
+              const quoteIndex = i > 0 && i % 3 === 0 ? Math.floor(i / 3) - 1 : -1;
+              const quote = quoteIndex >= 0 && quoteIndex < interstitialQuotes.length
+                ? interstitialQuotes[quoteIndex]
+                : null;
+
+              return (
+                <Fragment key={i}>
+                  {quote && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={isInView ? { opacity: 1, y: 0 } : {}}
+                      transition={{ duration: 1, delay: 0.3 + i * 0.06 }}
+                      className="col-span-2 md:col-span-3 py-10 sm:py-14 lg:py-20 flex flex-col items-center justify-center"
                     >
-                      {img.alt}
-                    </p>
-                  </div>
-                </div>
-                {/* Mobile caption — always visible */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/40 to-transparent p-2.5 sm:p-3 md:hidden">
-                  <p
-                    className="text-white/85 text-[10px] sm:text-[11px] tracking-[0.08em]"
-                    style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
+                      <div className="w-8 sm:w-10 h-[1px] bg-[#C8B89A]/50 mb-6 sm:mb-8" />
+                      <p
+                        className="text-[#5C5147] text-[15px] sm:text-[18px] lg:text-[20px] tracking-[0.04em] leading-[2] italic text-center"
+                        style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, wordBreak: "keep-all" }}
+                      >
+                        {quote.line1}<br />
+                        {quote.line2}
+                      </p>
+                      <div className="w-8 sm:w-10 h-[1px] bg-[#C8B89A]/50 mt-6 sm:mt-8" />
+                    </motion.div>
+                  )}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{
+                      duration: 0.8,
+                      delay: 0.3 + i * 0.06,
+                      ease: "easeOut",
+                    }}
+                    className={`relative overflow-hidden group cursor-pointer ${
+                      img.span === "large"
+                        ? "col-span-2 md:col-span-2 aspect-[16/9]"
+                        : "col-span-1 aspect-[3/4]"
+                    }`}
+                    onClick={() => openLightbox(i)}
                   >
-                    {img.alt}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      className="w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-110"
+                      loading="eager"
+                    />
+                    {/* Hover overlay — desktop */}
+                    <div className="absolute inset-0 bg-[#4A3F35]/0 group-hover:bg-[#4A3F35]/25 transition-all duration-700 hidden md:flex items-end">
+                      <div className="w-full p-4 lg:p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                        <p
+                          className="text-white text-[12px] lg:text-[13px] tracking-[0.15em]"
+                          style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
+                        >
+                          {img.alt}
+                        </p>
+                      </div>
+                    </div>
+                    {/* Mobile caption — always visible */}
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/40 to-transparent p-2.5 sm:p-3 md:hidden">
+                      <p
+                        className="text-white/85 text-[10px] sm:text-[11px] tracking-[0.08em]"
+                        style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
+                      >
+                        {img.alt}
+                      </p>
+                    </div>
+                  </motion.div>
+                </Fragment>
+              );
+            })}
           </div>
+
+          {/* Closing quote — 감성 마무리 */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 1, delay: 1 }}
+            className="mt-20 sm:mt-28 text-center max-w-xl mx-auto"
+          >
+            <div className="w-10 h-[1px] bg-[#C8B89A]/50 mx-auto mb-8" />
+            <p
+              className="text-[#5C5147] text-[14px] sm:text-[16px] tracking-[0.04em] leading-[2.2] italic"
+              style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, wordBreak: "keep-all" }}
+            >
+              시간이 머물고,<br />
+              빛이 춤추고,<br />
+              공간이 당신의 이야기를 기다립니다.
+            </p>
+          </motion.div>
         </div>
       </section>
 

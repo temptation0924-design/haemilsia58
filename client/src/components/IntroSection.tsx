@@ -75,16 +75,29 @@ export default function IntroSection() {
               해밀시아 58 스튜디오는 경기도 화성에 자리한 프라이빗 고급 대저택형 촬영 공간입니다.
             </p>
             <p
-              className="text-[#5C5147] text-[14px] sm:text-[15px] md:text-[16px] leading-[2] sm:leading-[2.2] tracking-[0.02em] text-justify"
+              className="text-[#5C5147] text-[14px] sm:text-[15px] md:text-[16px] leading-[2] sm:leading-[2.2] tracking-[0.02em] text-left"
               style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300, wordBreak: "keep-all" }}
             >
-              문을 여는 순간 펼쳐지는 높은 천장과 웅장한 개방감, 그리고 커다란 창을 통해 쏟아지는 풍부한 자연광은 어떤 촬영이든 완벽한 미장센을 완성해 줍니다. 세심하게 큐레이션 된 유럽풍 빈티지 가구와 대리석, 원목이 어우러진 인테리어는 공간 곳곳에 따뜻하고 고급스러운 숨결을 불어넣습니다.
+              문을 여는 순간,<br />
+              높은 천장과 웅장한 개방감이 펼쳐집니다.<br />
+              커다란 창으로 쏟아지는 풍부한 자연광은<br />
+              어떤 촬영이든 완벽한 미장센을 완성합니다.
+              <br /><br />
+              절제된 라인과 따뜻한 질감이 공존하는<br />
+              모던 럭셔리 인테리어.<br />
+              대리석의 차분함, 원목의 온기, 섬세한 조명이<br />
+              공간 곳곳에 조용한 기품을 더합니다.
             </p>
             <p
-              className="text-[#5C5147] text-[14px] sm:text-[15px] md:text-[16px] leading-[2] sm:leading-[2.2] tracking-[0.02em] text-justify"
+              className="text-[#5C5147] text-[14px] sm:text-[15px] md:text-[16px] leading-[2] sm:leading-[2.2] tracking-[0.02em] text-left"
               style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300, wordBreak: "keep-all" }}
             >
-              우리는 창작자가 오직 결과물에만 집중할 수 있는 환경을 고민했습니다. 외부 소음이 완벽히 차단된 프라이빗한 공간에서, 광고부터 드라마, 유튜브 콘텐츠까지 당신이 상상했던 모든 장면을 현실로 만들어 보세요.
+              우리는 창작자가<br />
+              오직 결과물에만 집중할 수 있는 환경을 고민했습니다.
+              <br /><br />
+              외부 소음이 완벽히 차단된 프라이빗한 공간에서,<br />
+              광고부터 드라마, 유튜브 콘텐츠까지<br />
+              당신이 상상했던 모든 장면을 현실로 만들어 보세요.
             </p>
 
             {/* Key stats */}

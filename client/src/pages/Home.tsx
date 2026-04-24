@@ -13,6 +13,7 @@ import FeatureSection from "@/components/FeatureSection";
 import PricingSection from "@/components/PricingSection";
 import GalleryStrip from "@/components/GalleryStrip";
 import LocationSection from "@/components/LocationSection";
+import PrivateHomeSection from "@/components/PrivateHomeSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import FloatingCallButton from "@/components/FloatingCallButton";
@@ -28,6 +29,7 @@ export default function Home() {
       <PricingSection />
       <GalleryStrip />
       <LocationSection />
+      <PrivateHomeSection />
       <CTASection />
       <Footer />
       <FloatingCallButton />
