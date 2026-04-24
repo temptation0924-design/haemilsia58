@@ -1,107 +1,157 @@
-import { motion } from "framer-motion";
+/*
+ * Gallery Section — Grid Layout
+ * Design: "Quiet Luxury" — Asymmetric masonry-style grid
+ * All images visible at once, no horizontal scroll needed
+ */
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "@/hooks/useInView";
+import { X } from "lucide-react";
 
 const galleryImages = [
-  { src: "/manus-storage/IMG_5419_ac358a87.webp", alt: "다이닝 공간" },
-  { src: "/manus-storage/IMG_5453_a43accd2.webp", alt: "야외 정원" },
-  { src: "/manus-storage/IMG_5427_4c2257b9.webp", alt: "침실 공간" },
-  { src: "/manus-storage/IMG_5436_4e45df93.webp", alt: "야외 테라스" },
-  { src: "/manus-storage/IMG_5417_0e5fe16f.webp", alt: "거실 디테일" },
-  { src: "/manus-storage/IMG_5430_10aa35ec.webp", alt: "인테리어 디테일" },
-  { src: "/manus-storage/IMG_5428_f079d681.webp", alt: "공간 디테일" },
-  { src: "/manus-storage/IMG_5455_b620b187.webp", alt: "야외 풍경" },
+  { src: "/manus-storage/IMG_5404_6c2f447c.webp", alt: "다이닝 & 자연광", span: "large" },
+  { src: "/manus-storage/IMG_5392_8f246539.webp", alt: "거실 공간", span: "small" },
+  { src: "/manus-storage/IMG_5405_6f5d3436.webp", alt: "모던 키친", span: "small" },
+  { src: "/manus-storage/IMG_5414_d8153493.webp", alt: "야외 테라스", span: "large" },
+  { src: "/manus-storage/IMG_5421_d848cd22.webp", alt: "주방 디테일", span: "small" },
+  { src: "/manus-storage/IMG_5427_4c2257b9.webp", alt: "프라이빗 룸", span: "small" },
+  { src: "/manus-storage/IMG_5453_a43accd2.webp", alt: "야외 정원", span: "large" },
+  { src: "/manus-storage/IMG_5417_0e5fe16f.webp", alt: "거실 디테일", span: "small" },
+  { src: "/manus-storage/IMG_5436_4e45df93.webp", alt: "테라스 라운지", span: "small" },
+  { src: "/manus-storage/IMG_5419_ac358a87.webp", alt: "정원 산책로", span: "large" },
+  { src: "/manus-storage/IMG_5428_f079d681.webp", alt: "인테리어 소품", span: "small" },
+  { src: "/manus-storage/IMG_5455_b620b187.webp", alt: "야외 풍경", span: "small" },
 ];
 
 export default function GalleryStrip() {
-  const [ref, isInView] = useInView({ threshold: 0.1 });
+  const [ref, isInView] = useInView({ threshold: 0.05 });
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
 
   return (
-    <section
-      ref={ref}
-      className="py-14 sm:py-20 lg:py-28 overflow-hidden"
-      style={{ backgroundColor: "#FAF8F4" }}
-    >
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : {}}
-        transition={{ duration: 1, delay: 0.2 }}
-        className="text-center mb-8 sm:mb-14 px-5 sm:px-6"
+    <>
+      <section
+        id="gallery"
+        ref={ref}
+        className="py-14 sm:py-20 lg:py-28 px-4 sm:px-8 lg:px-16"
+        style={{ backgroundColor: "#FAF8F4" }}
       >
-        <p
-          className="text-[11px] sm:text-[12px] tracking-[0.35em] uppercase text-[#9A8E82]"
-          style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="text-center mb-10 sm:mb-16"
         >
-          Gallery
-        </p>
-      </motion.div>
-
-      {/* Horizontal scrolling gallery - touch-optimized */}
-      <motion.div
-        initial={{ opacity: 0, x: 60 }}
-        animate={isInView ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 1.5, delay: 0.4, ease: "easeOut" }}
-        className="flex gap-3 sm:gap-4 lg:gap-5 px-5 sm:px-10 overflow-x-auto snap-x snap-mandatory"
-        style={{
-          scrollbarWidth: "none",
-          msOverflowStyle: "none",
-          WebkitOverflowScrolling: "touch",
-        }}
-      >
-        {galleryImages.map((img, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.5 + i * 0.1, ease: "easeOut" }}
-            className="flex-shrink-0 overflow-hidden group cursor-pointer snap-start"
-            style={{ width: "clamp(200px, 65vw, 380px)" }}
+          <p
+            className="text-[11px] sm:text-[12px] tracking-[0.35em] uppercase text-[#9A8E82] mb-4 sm:mb-6"
+            style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
           >
-            <div className="relative overflow-hidden aspect-[4/5]">
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="w-full h-full object-cover transition-transform duration-[2s] ease-out group-hover:scale-105"
-                loading="lazy"
-              />
-              {/* Hover overlay with caption - desktop only */}
-              <div className="absolute inset-0 bg-[#4A3F35]/0 group-hover:bg-[#4A3F35]/20 transition-all duration-700 hidden md:flex items-end">
-                <p
-                  className="text-white/0 group-hover:text-white/80 transition-all duration-700 text-[12px] tracking-[0.15em] p-5"
-                  style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
-                >
-                  {img.alt}
-                </p>
-              </div>
-              {/* Mobile: always-visible caption */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/40 to-transparent p-3 sm:p-4 md:hidden">
-                <p
-                  className="text-white/80 text-[11px] tracking-[0.1em]"
-                  style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
-                >
-                  {img.alt}
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        ))}
-        {/* Spacer at end for scroll padding */}
-        <div className="flex-shrink-0 w-1 sm:w-4" />
-      </motion.div>
+            Gallery
+          </p>
+          <h2
+            className="text-[28px] sm:text-[36px] lg:text-[42px] text-[#4A3F35] leading-tight"
+            style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
+          >
+            공간의 순간들
+          </h2>
+        </motion.div>
 
-      {/* Scroll hint */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : {}}
-        transition={{ duration: 1, delay: 1.5 }}
-        className="text-center mt-5 sm:mt-8"
-      >
-        <p
-          className="text-[10px] sm:text-[11px] tracking-[0.15em] sm:tracking-[0.2em] text-[#C8B89A]"
-          style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
-        >
-          ← 스크롤하여 더 보기 →
-        </p>
-      </motion.div>
-    </section>
+        {/* Asymmetric Grid */}
+        <div className="max-w-[1400px] mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
+            {galleryImages.map((img, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.3 + i * 0.08,
+                  ease: "easeOut",
+                }}
+                className={`relative overflow-hidden group cursor-pointer ${
+                  img.span === "large"
+                    ? "col-span-2 md:col-span-2 aspect-[16/9]"
+                    : "col-span-1 aspect-[3/4]"
+                }`}
+                onClick={() => setSelectedImage(img)}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105"
+                  loading="lazy"
+                />
+                {/* Hover overlay — desktop */}
+                <div className="absolute inset-0 bg-[#4A3F35]/0 group-hover:bg-[#4A3F35]/25 transition-all duration-700 hidden md:flex items-end">
+                  <div className="w-full p-4 lg:p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <p
+                      className="text-white text-[12px] lg:text-[13px] tracking-[0.15em]"
+                      style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
+                    >
+                      {img.alt}
+                    </p>
+                  </div>
+                </div>
+                {/* Mobile caption — always visible */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/40 to-transparent p-2.5 sm:p-3 md:hidden">
+                  <p
+                    className="text-white/85 text-[10px] sm:text-[11px] tracking-[0.08em]"
+                    style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
+                  >
+                    {img.alt}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 sm:p-8"
+            onClick={() => setSelectedImage(null)}
+          >
+            {/* Close button */}
+            <button
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 z-[110] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-white/70 hover:text-white transition-colors"
+              onClick={() => setSelectedImage(null)}
+            >
+              <X className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1} />
+            </button>
+
+            {/* Image */}
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="max-w-[90vw] max-h-[85vh] relative"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                className="max-w-full max-h-[80vh] object-contain"
+              />
+              <p
+                className="text-center text-white/60 text-[12px] sm:text-[13px] tracking-[0.15em] mt-4"
+                style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
+              >
+                {selectedImage.alt}
+              </p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
