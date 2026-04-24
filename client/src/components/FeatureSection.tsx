@@ -53,13 +53,13 @@ export default function FeatureSection() {
           className="text-center mb-14 sm:mb-20 lg:mb-24"
         >
           <p
-            className="text-[11px] sm:text-[12px] tracking-[0.35em] uppercase mb-5 sm:mb-6 text-[#9A8E82]"
+            className="text-[11px] sm:text-[12px] tracking-[0.3em] uppercase mb-5 sm:mb-6 text-[#9A8E82]"
             style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
           >
             Why Haemilsia 58
           </p>
           <h2
-            className="font-serif text-[#4A3F35] text-[1.65rem] sm:text-3xl md:text-4xl lg:text-5xl tracking-[0.04em] sm:tracking-[0.06em]"
+            className="font-serif text-[#4A3F35] text-[1.65rem] sm:text-3xl md:text-4xl lg:text-5xl tracking-[0.04em] sm:tracking-[0.05em]"
             style={{ fontWeight: 300 }}
           >
             Crafted for Creators
@@ -86,14 +86,14 @@ export default function FeatureSection() {
                 </div>
               </div>
               <h3
-                className="font-serif text-[#4A3F35] text-lg sm:text-xl md:text-2xl tracking-[0.06em] mb-3 sm:mb-5"
+                className="font-serif text-[#4A3F35] text-lg sm:text-xl md:text-2xl tracking-[0.05em] mb-4 sm:mb-5"
                 style={{ fontWeight: 400 }}
               >
                 {feature.title}
               </h3>
               <p
-                className="text-[#6B6058] text-[13px] sm:text-[14px] leading-[1.8] sm:leading-[1.9] tracking-[0.01em] max-w-[280px] sm:max-w-xs mx-auto"
-                style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
+                className="text-[#6B6058] text-[13px] sm:text-[14px] leading-[1.9] sm:leading-[2] tracking-[0.01em] max-w-[280px] sm:max-w-xs mx-auto"
+                style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300, wordBreak: "keep-all" }}
               >
                 {feature.description}
               </p>
@@ -109,17 +109,17 @@ export default function FeatureSection() {
           className="mt-16 sm:mt-24 lg:mt-28 text-center"
         >
           <div className="w-8 sm:w-10 h-[1px] bg-[#C8B89A] mx-auto mb-8 sm:mb-12" />
-          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 sm:gap-y-3">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2.5 sm:gap-y-3">
             {useCases.map((item, i) => (
-              <span key={item} className="flex items-center gap-2 sm:gap-3">
+              <span key={item} className="flex items-center gap-3 sm:gap-4">
                 <span
-                  className="text-[12px] sm:text-[13px] tracking-[0.08em] sm:tracking-[0.1em] text-[#8A7E72]"
+                  className="text-[12px] sm:text-[13px] tracking-[0.06em] sm:tracking-[0.08em] text-[#8A7E72]"
                   style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
                 >
                   {item}
                 </span>
                 {i < useCases.length - 1 && (
-                  <span className="text-[#C8B89A]/60 text-[10px]">&middot;</span>
+                  <span className="text-[#C8B89A]/50 text-[10px]">&middot;</span>
                 )}
               </span>
             ))}

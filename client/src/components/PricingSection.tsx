@@ -1,6 +1,7 @@
 /*
  * PricingSection — 이용 요금 및 예약 안내
  * Design: "Quiet Luxury" — Old Money Minimalism
+ * Typography: Improved readability with consistent alignment
  */
 
 import { motion } from "framer-motion";
@@ -87,27 +88,27 @@ export default function PricingSection() {
           className="text-center mb-14 sm:mb-20 lg:mb-24"
         >
           <p
-            className="text-[11px] sm:text-[12px] tracking-[0.35em] uppercase mb-5 sm:mb-6 text-[#9A8E82]"
+            className="text-[11px] sm:text-[12px] tracking-[0.3em] uppercase mb-5 sm:mb-6 text-[#9A8E82]"
             style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
           >
             Pricing & Reservation
           </p>
           <h2
-            className="font-serif text-[#4A3F35] text-[1.65rem] sm:text-3xl md:text-4xl lg:text-5xl tracking-[0.04em] sm:tracking-[0.06em] mb-5 sm:mb-6"
+            className="font-serif text-[#4A3F35] text-[1.65rem] sm:text-3xl md:text-4xl lg:text-5xl tracking-[0.04em] sm:tracking-[0.05em] mb-5 sm:mb-6"
             style={{ fontWeight: 300 }}
           >
             이용 안내
           </h2>
           <p
-            className="text-[#8A7E72] text-[13px] sm:text-[14px] md:text-[15px] leading-[1.8] sm:leading-[1.9] max-w-lg mx-auto"
-            style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
+            className="text-[#8A7E72] text-[13px] sm:text-[14px] md:text-[15px] leading-[1.9] sm:leading-[2] max-w-lg mx-auto"
+            style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300, wordBreak: "keep-all" }}
           >
             촬영 목적에 따라 맞춤 견적을 안내해 드립니다.<br />
             편하게 전화 주시면 실시간 상담이 가능합니다.
           </p>
         </motion.div>
 
-        {/* Time Slots - stack on mobile */}
+        {/* Time Slots */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -129,7 +130,7 @@ export default function PricingSection() {
               <div className="flex items-center justify-center mb-4 sm:mb-6">
                 <Clock size={16} strokeWidth={1.2} className="text-[#C8B89A] mr-2 sm:w-[18px] sm:h-[18px]" />
                 <span
-                  className="text-[11px] sm:text-[12px] tracking-[0.25em] uppercase text-[#9A8E82]"
+                  className="text-[11px] sm:text-[12px] tracking-[0.2em] uppercase text-[#9A8E82]"
                   style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
                 >
                   {slot.duration}
@@ -137,14 +138,14 @@ export default function PricingSection() {
               </div>
 
               <h3
-                className="font-serif text-[#4A3F35] text-xl sm:text-2xl lg:text-3xl tracking-[0.08em] mb-3 sm:mb-4"
+                className="font-serif text-[#4A3F35] text-xl sm:text-2xl lg:text-3xl tracking-[0.06em] mb-3 sm:mb-4"
                 style={{ fontWeight: 300 }}
               >
                 {slot.label}
               </h3>
 
               <p
-                className="text-[#6B6058] text-[14px] sm:text-[15px] lg:text-[16px] tracking-[0.05em] mb-4 sm:mb-5"
+                className="text-[#6B6058] text-[14px] sm:text-[15px] lg:text-[16px] tracking-[0.04em] mb-4 sm:mb-5 tabular-nums"
                 style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 400 }}
               >
                 {slot.time}
@@ -153,8 +154,8 @@ export default function PricingSection() {
               <div className="w-6 h-[1px] bg-[#C8B89A]/50 mx-auto mb-4 sm:mb-5" />
 
               <p
-                className="text-[#9A8E82] text-[12px] sm:text-[13px] leading-[1.7]"
-                style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
+                className="text-[#9A8E82] text-[12px] sm:text-[13px] leading-[1.8]"
+                style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300, wordBreak: "keep-all" }}
               >
                 {slot.note}
               </p>
@@ -170,20 +171,20 @@ export default function PricingSection() {
           className="text-center mb-16 sm:mb-24 lg:mb-28 py-8 sm:py-10 lg:py-14 px-5 sm:px-6 border-y border-[#E8E0D4]"
         >
           <p
-            className="text-[#4A3F35] text-[14px] sm:text-[15px] lg:text-[16px] leading-[1.9] sm:leading-[2] tracking-[0.02em]"
-            style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
+            className="text-[#4A3F35] text-[14px] sm:text-[15px] lg:text-[16px] leading-[2] sm:leading-[2.1] tracking-[0.02em]"
+            style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300, wordBreak: "keep-all" }}
           >
             대여 시간 및 요금은 촬영 목적에 따라 상이하며,
           </p>
           <p
-            className="text-[#4A3F35] text-[14px] sm:text-[15px] lg:text-[16px] leading-[1.9] sm:leading-[2] tracking-[0.02em] mb-5 sm:mb-6"
-            style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
+            className="text-[#4A3F35] text-[14px] sm:text-[15px] lg:text-[16px] leading-[2] sm:leading-[2.1] tracking-[0.02em] mb-6 sm:mb-7"
+            style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300, wordBreak: "keep-all" }}
           >
             <span className="text-[#8A7E72] font-medium">맞춤 견적</span>을 통해 안내해 드립니다.
           </p>
           <a
             href="tel:010-4819-9078"
-            className="inline-flex items-center gap-2 sm:gap-3 text-[#4A3F35] text-[13px] sm:text-[14px] tracking-[0.12em] sm:tracking-[0.15em] uppercase px-6 sm:px-8 py-3.5 sm:py-3.5 border border-[#4A3F35] hover:bg-[#4A3F35] hover:text-[#FAF8F4] active:bg-[#4A3F35] active:text-[#FAF8F4] transition-all duration-500 group"
+            className="inline-flex items-center gap-2.5 sm:gap-3 text-[#4A3F35] text-[13px] sm:text-[14px] tracking-[0.1em] sm:tracking-[0.12em] uppercase px-7 sm:px-9 py-3.5 sm:py-4 border border-[#4A3F35] hover:bg-[#4A3F35] hover:text-[#FAF8F4] active:bg-[#4A3F35] active:text-[#FAF8F4] transition-all duration-500 group"
             style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
           >
             <Phone size={14} strokeWidth={1.3} className="sm:w-[15px] sm:h-[15px]" />
@@ -191,7 +192,7 @@ export default function PricingSection() {
             <ArrowRight size={13} strokeWidth={1.3} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-500 hidden sm:block sm:w-[14px] sm:h-[14px]" />
           </a>
           <p
-            className="mt-3 sm:mt-4 text-[#9A8E82] text-[11px] sm:text-[12px] tracking-[0.1em]"
+            className="mt-3 sm:mt-4 text-[#9A8E82] text-[11px] sm:text-[12px] tracking-[0.08em]"
             style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
           >
             실시간 상담 가능
@@ -207,13 +208,13 @@ export default function PricingSection() {
         >
           <div className="text-center mb-10 sm:mb-16">
             <p
-              className="text-[11px] sm:text-[12px] tracking-[0.35em] uppercase mb-5 sm:mb-6 text-[#9A8E82]"
+              className="text-[11px] sm:text-[12px] tracking-[0.3em] uppercase mb-5 sm:mb-6 text-[#9A8E82]"
               style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
             >
               How to Reserve
             </p>
             <h3
-              className="font-serif text-[#4A3F35] text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-[0.04em] sm:tracking-[0.06em]"
+              className="font-serif text-[#4A3F35] text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-[0.04em] sm:tracking-[0.05em]"
               style={{ fontWeight: 300 }}
             >
               예약 절차
@@ -231,7 +232,7 @@ export default function PricingSection() {
               >
                 {/* Step number */}
                 <p
-                  className="font-serif text-[#C8B89A]/40 text-4xl sm:text-5xl lg:text-6xl tracking-[0.1em] mb-4 sm:mb-5"
+                  className="font-serif text-[#C8B89A]/40 text-4xl sm:text-5xl lg:text-6xl tracking-[0.08em] mb-4 sm:mb-5"
                   style={{ fontWeight: 300 }}
                 >
                   {item.step}
@@ -245,15 +246,15 @@ export default function PricingSection() {
                 </div>
 
                 <h4
-                  className="font-serif text-[#4A3F35] text-base sm:text-lg lg:text-xl tracking-[0.06em] mb-3 sm:mb-4"
+                  className="font-serif text-[#4A3F35] text-base sm:text-lg lg:text-xl tracking-[0.05em] mb-3 sm:mb-4"
                   style={{ fontWeight: 400 }}
                 >
                   {item.title}
                 </h4>
 
                 <p
-                  className="text-[#8A7E72] text-[12px] sm:text-[13px] lg:text-[14px] leading-[1.8] max-w-[260px] sm:max-w-xs mx-auto"
-                  style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
+                  className="text-[#8A7E72] text-[12px] sm:text-[13px] lg:text-[14px] leading-[1.9] max-w-[260px] sm:max-w-xs mx-auto"
+                  style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300, wordBreak: "keep-all" }}
                 >
                   {item.description}
                 </p>
@@ -276,18 +277,18 @@ export default function PricingSection() {
           style={{ backgroundColor: "#FAF8F4" }}
         >
           <p
-            className="text-[11px] sm:text-[12px] tracking-[0.25em] uppercase text-[#9A8E82] mb-5 sm:mb-6"
+            className="text-[11px] sm:text-[12px] tracking-[0.2em] uppercase text-[#9A8E82] mb-5 sm:mb-6"
             style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
           >
             Notice
           </p>
-          <div className="space-y-2.5 sm:space-y-3">
+          <div className="space-y-3 sm:space-y-3.5">
             {notices.map((notice, i) => (
-              <div key={i} className="flex items-start gap-2.5 sm:gap-3">
-                <span className="text-[#C8B89A] text-[10px] mt-[5px] sm:mt-[6px] flex-shrink-0">&bull;</span>
+              <div key={i} className="flex items-start gap-3">
+                <span className="text-[#C8B89A] text-[10px] mt-[6px] sm:mt-[7px] flex-shrink-0">&bull;</span>
                 <p
-                  className="text-[#8A7E72] text-[12px] sm:text-[13px] lg:text-[14px] leading-[1.7] sm:leading-[1.8]"
-                  style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
+                  className="text-[#8A7E72] text-[12px] sm:text-[13px] lg:text-[14px] leading-[1.8] sm:leading-[1.9]"
+                  style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300, wordBreak: "keep-all" }}
                 >
                   {notice}
                 </p>

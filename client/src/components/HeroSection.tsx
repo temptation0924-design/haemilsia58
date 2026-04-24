@@ -33,7 +33,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
-          className="text-white/70 text-[11px] sm:text-[12px] md:text-[13px] tracking-[0.3em] sm:tracking-[0.4em] uppercase mb-6 sm:mb-8"
+          className="text-white/70 text-[11px] sm:text-[12px] md:text-[13px] tracking-[0.3em] sm:tracking-[0.35em] uppercase mb-6 sm:mb-8"
           style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
         >
           Haemilsia{" "}
@@ -55,7 +55,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.6, delay: 0.8, ease: "easeOut" }}
-          className="font-serif text-white text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-[0.06em] sm:tracking-[0.08em] leading-[1.25] sm:leading-[1.2]"
+          className="font-serif text-white text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-[0.05em] sm:tracking-[0.06em] leading-[1.25] sm:leading-[1.2]"
           style={{ fontWeight: 300 }}
         >
           빛이 머무는<br />
@@ -73,8 +73,8 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 1.2, ease: "easeOut" }}
-          className="text-white/65 text-[13px] sm:text-[14px] md:text-[15px] tracking-[0.03em] sm:tracking-[0.05em] leading-[1.8] sm:leading-[1.9] max-w-[320px] sm:max-w-md"
-          style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 200 }}
+          className="text-white/65 text-[13px] sm:text-[14px] md:text-[15px] tracking-[0.02em] sm:tracking-[0.03em] leading-[1.9] sm:leading-[2] max-w-[320px] sm:max-w-md"
+          style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 200, wordBreak: "keep-all" }}
         >
           당신의 이야기가 작품이 되는 공간.<br />
           완벽하게 차단된 소음 속에서 오롯이 촬영에만 몰입해 보세요.

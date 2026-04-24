@@ -1,7 +1,7 @@
 /*
  * Footer — HAEMILSIA 58 Branding
  * "58" uses Playfair Display Italic
- * 사업자 정보 포함 (네이버 파워링크 광고용)
+ * Typography: Improved readability with consistent alignment
  */
 
 export default function Footer() {
@@ -16,7 +16,7 @@ export default function Footer() {
           <div>
             <p className="flex items-baseline gap-1.5 mb-2 sm:mb-3">
               <span
-                className="text-[#FAF8F4]/85 text-lg sm:text-xl tracking-[0.25em]"
+                className="text-[#FAF8F4]/85 text-lg sm:text-xl tracking-[0.2em]"
                 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300 }}
               >
                 HAEMILSIA
@@ -34,7 +34,7 @@ export default function Footer() {
               </span>
             </p>
             <p
-              className="text-[#FAF8F4]/35 text-[11px] sm:text-[12px] tracking-[0.12em] leading-[1.8]"
+              className="text-[#FAF8F4]/35 text-[11px] sm:text-[12px] tracking-[0.08em] leading-[1.9]"
               style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 200 }}
             >
               빛이 머무는 프라이빗 대저택
@@ -43,20 +43,20 @@ export default function Footer() {
 
           {/* Location */}
           <div
-            className="text-[12px] sm:text-[13px] text-[#FAF8F4]/45 leading-[1.9] sm:leading-[2]"
+            className="text-[12px] sm:text-[13px] text-[#FAF8F4]/45 leading-[2] sm:leading-[2.1]"
             style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 200 }}
           >
-            <p className="text-[#C8B89A]/40 text-[10px] sm:text-[11px] tracking-[0.2em] uppercase mb-2 sm:mb-3">Location</p>
+            <p className="text-[#C8B89A]/40 text-[10px] sm:text-[11px] tracking-[0.15em] uppercase mb-2 sm:mb-3">Location</p>
             <p>경기도 화성시 남양읍 역골동로 32-6</p>
             <p>1층 단독주택</p>
           </div>
 
           {/* Contact */}
           <div
-            className="text-[12px] sm:text-[13px] text-[#FAF8F4]/45 leading-[1.9] sm:leading-[2]"
+            className="text-[12px] sm:text-[13px] text-[#FAF8F4]/45 leading-[2] sm:leading-[2.1]"
             style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 200 }}
           >
-            <p className="text-[#C8B89A]/40 text-[10px] sm:text-[11px] tracking-[0.2em] uppercase mb-2 sm:mb-3">Contact</p>
+            <p className="text-[#C8B89A]/40 text-[10px] sm:text-[11px] tracking-[0.15em] uppercase mb-2 sm:mb-3">Contact</p>
             <a
               href="tel:010-4819-9078"
               className="block hover:text-[#FAF8F4]/65 active:text-[#FAF8F4]/65 transition-colors duration-300"
@@ -77,12 +77,12 @@ export default function Footer() {
         {/* Divider */}
         <div className="w-full h-[1px] bg-[#FAF8F4]/8 my-8 sm:my-12" />
 
-        {/* 사업자 정보 — 네이버 파워링크 광고용 */}
+        {/* 사업자 정보 */}
         <div
-          className="mb-6 sm:mb-8 text-[#FAF8F4]/20 text-[10px] sm:text-[11px] leading-[2] sm:leading-[2.2]"
+          className="mb-6 sm:mb-8 text-[#FAF8F4]/20 text-[10px] sm:text-[11px] leading-[2.1] sm:leading-[2.3]"
           style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 200 }}
         >
-          <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-y-0.5 sm:gap-y-0 sm:gap-x-1">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-y-0.5 sm:gap-y-0 sm:gap-x-2">
             <span>상호 : 태흥스펀지</span>
             <span className="hidden sm:inline text-[#FAF8F4]/10">|</span>
             <span>대표 : 최숙영</span>
@@ -96,7 +96,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <p
-          className="text-[#FAF8F4]/20 text-[10px] sm:text-[11px] tracking-[0.1em] text-center"
+          className="text-[#FAF8F4]/20 text-[10px] sm:text-[11px] tracking-[0.08em] text-center"
           style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 200 }}
         >
           &copy; {new Date().getFullYear()} Haemilsia 58 Studio. All rights reserved.

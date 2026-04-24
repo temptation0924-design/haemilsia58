@@ -1,7 +1,7 @@
 /*
  * Floating Call Button — Always visible at bottom-right
  * Design: "Quiet Luxury" — Subtle, elegant floating action button
- * Shows phone icon + text on desktop, icon only on mobile
+ * Shows phone icon + "전화문의" text on ALL screen sizes
  * Appears after scrolling past the hero section
  */
 
@@ -14,7 +14,6 @@ export default function FloatingCallButton() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show after scrolling 500px (past hero section)
       setIsVisible(window.scrollY > 500);
     };
 
@@ -34,15 +33,14 @@ export default function FloatingCallButton() {
         >
           <a
             href="tel:010-4819-9078"
-            className="group flex items-center gap-2.5 sm:gap-3 rounded-full shadow-lg transition-all duration-500 hover:shadow-xl"
+            className="group flex items-center gap-2 sm:gap-3 rounded-full shadow-lg transition-all duration-500 hover:shadow-xl"
             style={{
               backgroundColor: "#4A3F35",
-              padding: "12px 16px",
+              padding: "12px 18px",
             }}
           >
             {/* Phone icon with pulse ring */}
             <span className="relative flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6">
-              {/* Pulse animation ring */}
               <span
                 className="absolute inset-0 rounded-full animate-ping opacity-20"
                 style={{ backgroundColor: "#C8B89A" }}
@@ -53,12 +51,12 @@ export default function FloatingCallButton() {
               />
             </span>
 
-            {/* Text — hidden on very small screens */}
+            {/* "전화문의" — always visible on all screens */}
             <span
-              className="hidden sm:inline text-[12px] sm:text-[13px] tracking-[0.1em] text-[#FAF8F4]/90 group-hover:text-[#FAF8F4] transition-colors duration-300 pr-1"
+              className="text-[12px] sm:text-[13px] tracking-[0.12em] text-[#FAF8F4]/90 group-hover:text-[#FAF8F4] transition-colors duration-300 pr-0.5"
               style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 300 }}
             >
-              전화 문의
+              전화문의
             </span>
           </a>
         </motion.div>
