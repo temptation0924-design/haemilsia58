@@ -15,6 +15,7 @@ import GalleryStrip from "@/components/GalleryStrip";
 import LocationSection from "@/components/LocationSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import FloatingCallButton from "@/components/FloatingCallButton";
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
       <LocationSection />
       <CTASection />
       <Footer />
+      <FloatingCallButton />
     </div>
   );
 }
