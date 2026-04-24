@@ -1,6 +1,7 @@
 /*
  * Footer — HAEMILSIA 58 Branding
  * "58" uses Playfair Display Italic
+ * 사업자 정보 포함 (네이버 파워링크 광고용)
  */
 
 export default function Footer() {
@@ -75,6 +76,23 @@ export default function Footer() {
 
         {/* Divider */}
         <div className="w-full h-[1px] bg-[#FAF8F4]/8 my-8 sm:my-12" />
+
+        {/* 사업자 정보 — 네이버 파워링크 광고용 */}
+        <div
+          className="mb-6 sm:mb-8 text-[#FAF8F4]/20 text-[10px] sm:text-[11px] leading-[2] sm:leading-[2.2]"
+          style={{ fontFamily: "'Noto Sans KR', sans-serif", fontWeight: 200 }}
+        >
+          <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-y-0.5 sm:gap-y-0 sm:gap-x-1">
+            <span>상호 : 태흥스펀지</span>
+            <span className="hidden sm:inline text-[#FAF8F4]/10">|</span>
+            <span>대표 : 최숙영</span>
+            <span className="hidden sm:inline text-[#FAF8F4]/10">|</span>
+            <span>사업자등록번호 : 124-12-62101</span>
+          </div>
+          <p className="mt-0.5">
+            주소 : 경기도 화성시 남양읍 현대기아로 376-13번지
+          </p>
+        </div>
 
         {/* Copyright */}
         <p
