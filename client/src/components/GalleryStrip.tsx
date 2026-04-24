@@ -81,7 +81,7 @@ export default function GalleryStrip() {
                 <img
                   src={img.src}
                   alt={img.alt}
-                  className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105"
+                  className="w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-110"
                   loading="lazy"
                 />
                 {/* Hover overlay — desktop */}
