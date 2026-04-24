@@ -2,6 +2,7 @@
  * Gallery Section — Grid Layout
  * Design: "Quiet Luxury" — Asymmetric masonry-style grid
  * All images visible at once, no horizontal scroll needed
+ * NOTE: No duplicate images with Hero, Intro, SpacePreview, or CTA sections
  */
 
 import { useState } from "react";
@@ -10,10 +11,10 @@ import { useInView } from "@/hooks/useInView";
 import { X } from "lucide-react";
 
 const galleryImages = [
-  { src: "/manus-storage/IMG_5404_6c2f447c.webp", alt: "다이닝 & 자연광", span: "large" },
-  { src: "/manus-storage/IMG_5392_8f246539.webp", alt: "거실 공간", span: "small" },
-  { src: "/manus-storage/IMG_5405_6f5d3436.webp", alt: "모던 키친", span: "small" },
-  { src: "/manus-storage/IMG_5414_d8153493.webp", alt: "야외 테라스", span: "large" },
+  { src: "/manus-storage/IMG_5411_623496da.webp", alt: "거실 전경", span: "large" },
+  { src: "/manus-storage/IMG_5425_e95a0793.webp", alt: "주방 공간", span: "small" },
+  { src: "/manus-storage/IMG_5415_6780e7e5.webp", alt: "인테리어 디테일", span: "small" },
+  { src: "/manus-storage/IMG_5431_869b8979.webp", alt: "야외 테라스", span: "large" },
   { src: "/manus-storage/IMG_5421_d848cd22.webp", alt: "주방 디테일", span: "small" },
   { src: "/manus-storage/IMG_5427_4c2257b9.webp", alt: "프라이빗 룸", span: "small" },
   { src: "/manus-storage/IMG_5453_a43accd2.webp", alt: "야외 정원", span: "large" },
