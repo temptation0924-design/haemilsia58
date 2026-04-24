@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://haemilsia58.netlify.app/sitemap.xml
