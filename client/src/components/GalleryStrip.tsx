@@ -163,8 +163,8 @@ export default function GalleryStrip() {
                     }}
                     className={`relative overflow-hidden group cursor-pointer ${
                       img.span === "large"
-                        ? "col-span-2 md:col-span-2 aspect-[16/9]"
-                        : "col-span-1 aspect-[3/4]"
+                        ? "col-span-2 md:col-span-1 aspect-[16/9] md:aspect-[4/5]"
+                        : "col-span-1 aspect-[3/4] md:aspect-[4/5]"
                     }`}
                     onClick={() => openLightbox(i)}
                   >
