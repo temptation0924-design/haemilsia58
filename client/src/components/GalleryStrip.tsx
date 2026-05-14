@@ -48,7 +48,7 @@ const galleryImages = [
   // Interior - Corridor
   { src: "/images/haemilsia_new_12.webp", alt: "코랄 복도", span: "small" },
   // Outdoor
-  { src: "/images/IMG_5419.webp", alt: "정원과 건물 전경", span: "large" },
+  { src: "/images/IMG_6419.webp", alt: "정원과 건물 전경", span: "large" },
   // Interior - Pink hallway
   { src: "/images/haemilsia_new_05.webp", alt: "핑크 타일 현관", span: "small" },
   // Outdoor
