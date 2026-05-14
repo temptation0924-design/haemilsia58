@@ -116,3 +116,6 @@ client/public/__manus__/version.json
 
 # Local Netlify folder
 .netlify
+
+# Claude Code local config (preview server launch settings)
+.claude/

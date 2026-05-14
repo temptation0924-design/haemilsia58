@@ -22,9 +22,9 @@ const interstitialQuotes = [
 
 const galleryImages = [
   // Outdoor
-  { src: "/images/IMG_5411.webp", alt: "소나무 정원과 자갈길", span: "large" },
+  { src: "/images/IMG_6400.webp", alt: "소나무 정원의 봄 꽃잔디와 그네 벤치", span: "large" },
   { src: "/images/IMG_5425.webp", alt: "테라스 라운지 야경", span: "small" },
-  { src: "/images/IMG_5415.webp", alt: "중정과 건물 외관", span: "small" },
+  { src: "/images/IMG_6399.webp", alt: "중정과 건물 외관", span: "small" },
   // Interior - Living Room
   { src: "/images/haemilsia_new_10.webp", alt: "거실 라운지", span: "large" },
   // Outdoor
@@ -40,7 +40,7 @@ const galleryImages = [
   // Interior - White Bedroom
   { src: "/images/haemilsia_new_03.webp", alt: "화이트 침실", span: "small" },
   // Outdoor
-  { src: "/images/IMG_5417.webp", alt: "정원 카페 테이블", span: "small" },
+  { src: "/images/IMG_6392.webp", alt: "정원 카페 테이블", span: "small" },
   // Outdoor
   { src: "/images/IMG_5436.webp", alt: "한옥 정자", span: "large" },
   // Interior - Bathroom
@@ -161,10 +161,10 @@ export default function GalleryStrip() {
                       delay: 0.3 + i * 0.06,
                       ease: "easeOut",
                     }}
-                    className={`relative overflow-hidden group cursor-pointer ${
+                    className={`relative overflow-hidden group cursor-pointer aspect-[3/2] ${
                       img.span === "large"
-                        ? "col-span-2 md:col-span-1 aspect-[16/9] md:aspect-[4/5]"
-                        : "col-span-1 aspect-[3/4] md:aspect-[4/5]"
+                        ? "col-span-2 md:col-span-1"
+                        : "col-span-1"
                     }`}
                     onClick={() => openLightbox(i)}
                   >
