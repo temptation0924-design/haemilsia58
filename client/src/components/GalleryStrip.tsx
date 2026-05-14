@@ -56,7 +56,7 @@ const galleryImages = [
   // Aerial - Night
   { src: "/images/haemilsia_new_01.webp", alt: "스튜디오 항공 야경", span: "large" },
   { src: "/images/IMG_5453.webp", alt: "야외 다이닝", span: "small" },
-  { src: "/images/IMG_5455.webp", alt: "정원 그네", span: "small" },
+  { src: "/images/IMG_6412.webp", alt: "정원 그네", span: "small" },
 ];
 
 export default function GalleryStrip() {
